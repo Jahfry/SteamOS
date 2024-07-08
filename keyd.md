@@ -33,7 +33,7 @@ sudo pacman-key --init
 sudo pacman-key --populate archlinux
 ```
 * Tell pacman to trust ALL sources (temporary, we'll switch it back after). 
-   * This comes from a hint on this issue: https://github.com/malordin/steamdeck-samba-server/issues/4
+   * This comes from a hint on [this issue](https://github.com/malordin/steamdeck-samba-server/issues/4) where it appears that SteamOS does not ship with complete packages for headers/glibc/base-devel.
    * Edit '/etc/pacman.confg'
       * Use whatever editor you like, example: `sudo nano /etc/pacman.conf` (all of my commands will be for nano, swap if you want)
       * Originally:
@@ -51,7 +51,10 @@ sudo pacman-key --populate archlinux
    `sudo pacman --sync --noconfirm base-devel glibc linux-api-headers`
 
 * **IF** the above command executed properly, do this step. *If you saw errors and nothing was installed, pause this guide now to try and figure out what happened until the step above executes properly*. 
-   * Remove the 'TrustAll' so that pacman requires trust again ... `sudo nano /etc/pacman.conf` again:
+   * Remove the 'TrustAll' so that pacman requires trust again:
+ 
+     `sudo nano /etc/pacman.conf`
+     
       * Currently:
          ```
          #SigLevel    = Required DatabaseOptional
@@ -66,7 +69,7 @@ sudo pacman-key --populate archlinux
 
 ## 2. Download, make and install 'keyd'
 
-These instructions are taken from [the keyd github README](https://github.com/rvaiya/keyd?tab=readme-ov-file#installation), I'm repeating them here so you do it at the right place with some additional notes (but go read that link to learn even more about keyd). 
+These instructions are taken from [the keyd github README](https://github.com/rvaiya/keyd?tab=readme-ov-file#installation), I'm repeating them here so you do it at the right place with some additional notes (but go read that link to learn about keyd). 
 
 * First, decide where you want to store the source code. I made a directory named '~home/Documents/source'. If you want the same, do the following. Otherwise adapt this command to your directory:
   `mkdir ~home/Documents/source; cd ~home/Documents/source`
