@@ -1,5 +1,7 @@
 # 'keyd' on the Steam Deck
 
+This is a long guide to help people newer to modifying their Steam Deck. Sorry for the folks that just want the nitty gritty, I'd rather just write 1 guide :)
+
 *What are we doing?* Installing 'keyd' on a Steam Deck. 
 
 *Why are we doing that?* So you can remap keys on a physical USB keyboard and have it work *both in Game and Desktop mode*, without affecting the Steam Deck's "volume" and "power" buttons. 
@@ -176,11 +178,18 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
 
    (read the comments in the section above to understand what is going on)
 
--    
-* * stop keyd so you can use 'keyd monitor' properly:
-    `sudo systemctl
+* * stop keyd so you can use 'keyd monitor' to see the base devices instead of the remapped keyd device:
+    
+    `sudo systemctl`
   
-  * use keyd monitor to get device IDs for your devices
+  * `keyd monitor`
+     * While this command is running, press your "volume up" button.
+     * You should see:
+       
+     > AT Translated Set 2 keyboard    0001:0001:a38e6885      volumeup down
+     
+     > AT Translated Set 2 keyboard    0001:0001:a38e6885      volumeup up
+
   
   * blacklist the Steam Deck buttons (affects power menu and no desire to affect Steam Controls in either mode)
 
@@ -196,10 +205,6 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
   
   * Press the volume up button on the Steam Deck
   
-  * You should see:
-
-AT Translated Set 2 keyboard    0001:0001:a38e6885      volumeup down
-AT Translated Set 2 keyboard    0001:0001:a38e6885      volumeup up
 
 * If instead you see
 
