@@ -38,10 +38,11 @@ sudo pacman-key --populate archlinux
          SigLevel    = Required DatabaseOptional
       * *Change that to this:*
          ```
-         > #SigLevel    = Required DatabaseOptional
+         #SigLevel    = Required DatabaseOptional
          SigLevel = TrustAll
          ```
 * Install/repair the compiler/headers needed to compile 'keyd':
+  
    `sudo pacman --sync --noconfirm base-devel glibc linux-api-headers`
 
 * Remove the 'TrustAll' so that pacman requires trust again ... edit 'etc/pacman.conf' again and change:
