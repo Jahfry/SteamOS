@@ -98,7 +98,9 @@ Much of the following is also taken directly from [GitHub - rvaiya/keyd: A key r
 
 * Create the file '/etc/keyd/default.conf'
 
-  `sudo nano /etc/keyd/default.conf` and paste in this:
+  `sudo nano /etc/keyd/default.conf`
+
+  and paste in this:
   
   ```
   [ids]
@@ -129,16 +131,16 @@ Much of the following is also taken directly from [GitHub - rvaiya/keyd: A key r
   `sudo keyd reload`
 
 * Your keyboard should be back to normal operation but you have a skeleton file ready for remapping. 
-* **If you ever create a bad mapping that prevents you from using your keyboard,** hold:
+* **If you ever create a bad mapping that prevents you from using your keyboard:** 
 
-  *'backspace' + 'enter' + 'escape'* at the same time to kill the keyd process.
+   * hold *'backspace' + 'enter' + 'escape'* at the same time to kill the keyd process.
+   * Edit your conf file again to fix whatever happened and run keyd again:
 
-  Edit your conf file again to fix whatever happened and run keyd again:
-
-  `sudo systemctl start keyd`.
+     `sudo systemctl start keyd`.
 
 * If you aren't sure what the name of the key you need to remap is, you can watch key events via `sudo keyd monitor`. If you want time stamps, use `sudo keyd monitor -t`.
-  * If keyd is running, the output of 'monitor' will show the **remapped** keys. To see the keys without remapping just stop keyd (`sudo systemctl stop keyd` or hold 'backspace+enter+escape`) and run
+  * **If keyd daemon is running**, the output of 'monitor' will show the **remapped** keys.
+  * To see the keys without remapping just stop keyd (`sudo systemctl stop keyd` or hold 'backspace+enter+escape`) and run
     
     `sudo keyd monitor`
 
