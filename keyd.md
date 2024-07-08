@@ -69,9 +69,10 @@ sudo pacman-key --populate archlinux
 
 ## 2. Download, make and install 'keyd'
 
-These instructions are taken from [the keyd github README](https://github.com/rvaiya/keyd?tab=readme-ov-file#installation), I'm repeating them here so you do it at the right place with some additional notes (but go read that link to learn about keyd). 
+These instructions are taken from [the keyd github README](https://github.com/rvaiya/keyd?tab=readme-ov-file#installation). I'm repeating them here with some tweaks (but go read that link to learn about keyd). 
 
 * First, decide where you want to store the source code. I made a directory named '~home/Documents/source'. If you want the same, do the following. Otherwise adapt this command to your directory:
+  
   `mkdir ~home/Documents/source; cd ~home/Documents/source`
 
 * Now you should be able to clone, build and install 'keyd':
@@ -85,7 +86,9 @@ sudo systemctl enable keyd && sudo systemctl start keyd
 
 ## 3. Set your Deck back to 'readonly'
 
-'readonly' can't be on before this point because the 'make install' above needs to write for the last step above. Now that that is done, set it back to readonly via: `sudo steamos-readonly enable`
+'readonly' can't be on before this point because the 'make install' above needs to write for the last step above. Now that that is done, set it back to readonly: 
+
+`sudo steamos-readonly enable`
 
 ## 4. Start remapping keys
 
