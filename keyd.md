@@ -187,7 +187,6 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
      * You should see:
        
      > AT Translated Set 2 keyboard    0001:0001:a38e6885      volumeup down
-     
      > AT Translated Set 2 keyboard    0001:0001:a38e6885      volumeup up
 
   
