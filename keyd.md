@@ -192,7 +192,7 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
 
       * Read this as:
         
-         > <device name>   <vendor id>:<product id>:<? not needed ?>   <key name>   <up or down>
+         > [device name]   [vendor id]:[product id]:[? not needed ?]   [key name]   [up or down]
          
       * If 'keyd' were running you would instead see:
    
