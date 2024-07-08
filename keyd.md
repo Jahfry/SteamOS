@@ -190,6 +190,16 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
      
         > AT Translated Set 2 keyboard    0001:0001:a38e6885      volumeup up
 
+      * Read this as:
+        
+         > <device name>   <vendor id>:<product id>:<? not needed ?>   <key name>   <up or down>
+         
+      * If 'keyd' were running you would instead see:
+   
+        > keyd virtual keyboard   0fac:0ade:efba1ddf      volumeup down
+        
+        > keyd virtual keyboard   0fac:0ade:efba1ddf      volumeup up
+
   
   * blacklist the Steam Deck buttons (affects power menu and no desire to affect Steam Controls in either mode)
 
