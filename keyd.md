@@ -244,7 +244,7 @@ XXX
      ```
 * Add initial contents for each of the conf files next.
    * **You need to change your [vendor id]:[product id] here using what you found via `sudo keyd monitor` above.** The examples below match *my* devices.
-   * For now the [main] section remains empty, so nothing is remapped in this step
+   * For now the [main] sections remain empty, so nothing is remapped in this step
    * Keyboard:
 
      `sudo nano /etc/keyd/keyboard.conf`
@@ -287,5 +287,22 @@ XXX
        
        [main] 
        ```
+
+## 7. Additional Tweaks
+
+These are NOT needed to make things work. Please read the notes before deciding to do these yourself. 
+
+* Moving the config files to the 'deck' user directory
+   * I did this to try and retain my config files even if SteamOS resets the /etc directory
+   * This may not have been necessary and won't affect the stuff before working
+   * **This can be a VERY BAD IDEA on a computer you want to be secured.**
+      * When 'keyd' runs it is run as ***root***.
+      * This tweak moves files root uses to a user accessible directory
+      * However I'm not changing the *ownership* to the user, they remain as root, and still require 'sudo' to edit
+      * If a user manages to get access to the files, they could force arbitrary commands to run as root since keyd has a 'command' binding option
+   * `sudo mv /etc/keyd ~home/.config`
+   * `sudo ln -s ~home/.config/keyd /etc`
+  
+       
       
    
