@@ -17,16 +17,15 @@
 * Go into your Steam Deck's "Desktop" mode and connect a USB keyboard. You're not going to want to do this guide with the virtual keyboard.
 * For most of this document you'll be working in a Konsole terminal window. Go ahead and open it now.
 * If your Steam Deck doesn't have a root password, set one now via `passwd`
-  * if you really really don't want a password later on, you can use `passwd -d` after this document to remove it ... but if you have to redo this after an update ... well ... just keep your password set.
-
-### IMPORTANT NOTE:
-
-***Write this password down / store it in a way you can't lose.*** There are ways to recover your password without resetting your Steam Deck to factory but I'm **not** going to be tech support!
-
+  * if you really really don't want a password later on, you can use `passwd -d` after this document to remove it
+  * Since you will likely have to redo this after an update ... well ... just keep your password set.
+  * If I find a way to set up 'keyd' locally instead of system wide I will update this document, but as it requires systemd to run in Game mode, that probably won't be the case.
+  * ***IMPORTANT NOTE:***
+     * ***Write this password down / store it in a way you can't lose.***
+     * There are ways to recover your password without resetting your Steam Deck to factory but I'm **not** going to be tech support!
 * Set your SteamOS to be writable so that following commands will work (we will go back to read only when 'keyd' is installed):
   `sudo steamos-readonly disable`
 * Initialize 'pacman' via: 
-
 ```
 sudo pacman-key --init
 sudo pacman-key --populate archlinux
