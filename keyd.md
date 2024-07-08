@@ -144,17 +144,23 @@ Much of the following is also taken directly from [GitHub - rvaiya/keyd: A key r
     
     `sudo keyd monitor`
 
-* For more information on using the 'keyd' main program do `keyd --help` or `man keyd` for details.
+* For more information on using the 'keyd' main program:
+   * `keyd --help` or
+   * `man keyd` for more details
 
 ## 5. Basic Steam Deck configuration
 
-The volume and power buttons on the Steam Deck are handled through a keyboard device. We don't want keyd to bind to those buttons, so we're going to blacklist that device from keyd. 
+The volume and power buttons on the Steam Deck are handled through a keyboard device. *We don't want keyd to bind to those buttons*, so we're going to blacklist that device from keyd. 
 
-* **TLDR;**
+* If you don't do this, the buttons can give different behaviors compared to a stock Steam Deck
+* **Example:** *in Game mode you won't be able to hold down the "Power" button to bring up the menu that allows you to switch to Desktop mode* (you can still get there via the Steam Button > Power, but, let's keep things normal)
+
+* **TLDR;** (just fix it)
+  * edit '/etc/keyd/default.conf'
   
-  * edit '/etc/keyd/default.conf' via `sudo nano /etc/keyd/default.conf` (or your preferred editor)
+    `sudo nano /etc/keyd/default.conf`
   
-  * Change the [ids] section to match this:
+  * Change the [ids] section to match this (replace the section between [ids] and [main], don't change [main] yet):
 ```
 [ids]
 # This section determines which devices 'keyd' will be able to remap.
@@ -168,6 +174,7 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
 -0001:0001
 ```
 
+   (read the comments in the section above to understand what is going on)
 
 -    
 * * stop keyd so you can use 'keyd monitor' properly:
