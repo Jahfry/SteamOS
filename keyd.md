@@ -30,17 +30,14 @@
 sudo pacman-key --init
 sudo pacman-key --populate archlinux
 ```
-
 * Tell pacman to trust ALL sources (temporary, we'll switch it back later). 
-  
-  This comes from a hint on this issue: https://github.com/malordin/steamdeck-samba-server/issues/4
-  
-  Edit '/etc/pacman.confg' and change (use whatever editor you like, example: `sudo nano /etc/pacman.conf`:
-  
-  * SigLevel    = Required DatabaseOptional
-    to
-  * #SigLevel    = Required DatabaseOptional
-    SigLevel = TrustAll
+   * This comes from a hint on this issue: https://github.com/malordin/steamdeck-samba-server/issues/4
+   * Edit '/etc/pacman.confg' (use whatever editor you like, example: `sudo nano /etc/pacman.conf`):
+      * Originally:
+    ```SigLevel    = Required DatabaseOptional```
+      * *Change that to this:*
+    ```#SigLevel    = Required DatabaseOptional
+    SigLevel = TrustAll```
 
 * Install/repair the compiler/headers needed to compile 'keyd':
   `sudo pacman --sync --noconfirm base-devel glibc linux-api-headers`
