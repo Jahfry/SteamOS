@@ -38,7 +38,7 @@ sudo pacman-key --populate archlinux
          > SigLevel    = Required DatabaseOptional
       * *Change that to this:*
          ```
-         #SigLevel    = Required DatabaseOptional
+         > #SigLevel    = Required DatabaseOptional
          SigLevel = TrustAll
          ```
 
