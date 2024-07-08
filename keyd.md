@@ -14,9 +14,10 @@
 
 ## 0. Prep work for compiling 'keyd' on the Steam Deck
 
-* Go into your Steam Deck's "Desktop" mode and connect a USB keyboard (you're not going to want to do this guide with the virtual keyboard).
+* Go into your Steam Deck's "Desktop" mode and connect a USB keyboard. You're not going to want to do this guide with the virtual keyboard.
 * For most of this document you'll be working in a Konsole terminal window. Go ahead and open it now.
-* If your Steam Deck doesn't have a root password, set one now via `passwd` (if you really really don't want a password later on, you can use `passwd -d` after this document to remove it ... but if you have to redo this after an update ... well ... just keep your password)
+* If your Steam Deck doesn't have a root password, set one now via `passwd`
+  * if you really really don't want a password later on, you can use `passwd -d` after this document to remove it ... but if you have to redo this after an update ... well ... just keep your password set.
 
 ### IMPORTANT NOTE:
 
