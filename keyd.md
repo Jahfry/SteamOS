@@ -194,43 +194,43 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
         
          > [device name]   [vendor id]:[product id]:[? not needed ?]   [key name]   [up or down]
          
-      * If 'keyd' were running you would instead see:
+      * If 'keyd' were running **AND** you had ***not*** *blacklisted the Steam Deck keypad buttons in [ids] above*, you would instead see:
    
         > keyd virtual keyboard   0fac:0ade:efba1ddf      volumeup down
         
         > keyd virtual keyboard   0fac:0ade:efba1ddf      volumeup up
 
-  
-  * blacklist the Steam Deck buttons (affects power menu and no desire to affect Steam Controls in either mode)
+* At this point you have a config file you can use to remap keys without affecting your Steam Deck volume/power buttons and an example of how to remap Escape and Control.
+* If you only have 1 USB device (or multiple but without the same keys on each) you can just modify the existing 'default.conf'.
+* If you have multiple devices with the same keys and want to map them separately, keep reading the next section.  
+* For more information on remapping:
+   *  [GitHub - rvaiya/keyd: A key remapping daemon for linux.](https://github.com/rvaiya/keyd?tab=readme-ov-file)
+   *  `man keyd`
 
-* * Primarily this is for the Power and Volume buttons on the Steam Deck. The other buttons and controls (sticks, pads) appear to purely be game controller functions which aren't affected (or seen) by keyd. *This is good*
-  
-  * You can see the <vendor id>:<product id> using `keyd monitor` in Desktop mode
-  
-  * Open a Konsole window
-  
-  * `sudo systemctl stop keyd` # stop keyd so actual vendor/product IDs are shown
-  
-  * `sudo keyd monitor`        # see what keys are being pressed in Konsole
-  
-  * Press the volume up button on the Steam Deck
-  
+## 6. My Steam Deck configuration
 
-* If instead you see
+* The goal for my keyboard remapping is, well, unusual.
+   * I use a numpad on the *left* side of my keyboard for playing World of Warcraft and use it for all class abilities
+   * To make it more useful I need to remap some of the numpad keys (like numpadEnter and numLock) so that I can use them for actions in WoW.
+   * My numpad ALSO has a row of keyboard keys (Escape, Tab, Backspace) that I want to remap without affecting the TKL keyboard
+   * To accomplish all of this I use multiple conf files, with examples of how to create them below
 
-keyd virtual keyboard   0fac:0ade:efba1ddf      volumeup down
-keyd virtual keyboard   0fac:0ade:efba1ddf      volumeup up
-
-## 6. For more information
-
-Please refer to [GitHub - rvaiya/keyd: A key remapping daemon for linux.](https://github.com/rvaiya/keyd?tab=readme-ov-file) for anything beyond what I'm showing you below. But I will give an example of how I configured my keyboard.
-
-* The goal for my keyboard remapping is, well, weird. I use a numpad on the *left* side of my keyboard for playing World of Warcraft. To make it more useful I need to remap some of the numpad keys (like numpadEnter and numLock) so that I can use them for actions in WoW. 
+XXX
 
 * In addition to this I will attempt to make a configuration that only remaps those keys *while playing WoW* (but until I edit this I'm not sure how that will work on the Steam Deck, especially in Game mode).
 
-* Because the numpad and main keyboard have some keys that are the same function (normally) I will also try to 'blacklist' the remappings to only affect the numpad.
-  
-  ```
-  
-  ```
+XXX
+
+* First: get a list of all plugged in USB device IDs. Since this will be different for other models of keyboards/numpads (ie, you can't just use my config unless you own the same devices) I'll detail that process:
+   * `sudo systemctl stop keyd` # so we see the raw device IDs with monitor
+   * `sudo keyd monitor` # see what devices are being pressed
+   * Press a key on each device we want to configure. Examples below for my 3 devices:
+      * Phantom RGB USB Keyboard:
+         > SONIX USB DEVICE        320f:5064:dfa388ad      d up
+      * Damoshark USB Numpad:
+         > Gaming Keyboard 0416:c345:475be355      numlock down
+      * Roccat Kone Aimo USB Mouse:
+         > ROCCAT ROCCAT Kone Aimo 16K Mouse       1e7d:2e2c:f891b7cd      leftmouse down
+
+    
+      * 
