@@ -10,7 +10,9 @@
 
 **I'll try to remember to edit this section after the next SteamOS update to answer whether you'll have to do this,** but I think it is a safe assumption. 
 
-***Don't go any farther*** unless you are comfortable with running Linux terminal commands and are willing to take responsibility for any mistakes (at worst you may get to a point where you have to reset your Deck, this won't BREAK it, but mistakes *could* be very inconvenient)
+***Don't go any farther*** unless you are comfortable with running Linux terminal commands and are willing to take responsibility for any mistakes (at worst you may get to a point where you have to reset your Deck, this won't BREAK it, but mistakes *could* be very inconvenient). Honestly this guide is *meant for people who don't mind tinkering with Linux*. The best thing that could happen would be Valve incorporating 'keyd' into their distribution so that it didn't break on OS updates. If you don't feel like you can keep things straight for each update this process may not be for you. **An aternative is 'kmonad'**, which I've used before, but doesn't (at least not easily) work in Game Mode. 
+
+*Why is Game Mode important?* Simply put ... frames per second. For me World of Warcraft gets about 50% more FPS in Game Mode than in Desktop Mode. If you've been happy with performance playing a game that wants a keyboard in Desktop Mode, look into 'kmonad' for a solution that works through SteamOS updates. I nuked the install that worked with 'kmonad' and forgot to document it so unfortunately (at least for now) I don't have a guide for that. 
 
 ## 0. Prep work for compiling 'keyd' on the Steam Deck
 
@@ -43,17 +45,24 @@ sudo pacman-key --populate archlinux
          #SigLevel    = Required DatabaseOptional
          SigLevel = TrustAll
          ```
+      * Save the file
 * Install/repair the compiler/headers needed to compile 'keyd':
   
    `sudo pacman --sync --noconfirm base-devel glibc linux-api-headers`
 
-* Remove the 'TrustAll' so that pacman requires trust again ... edit 'etc/pacman.conf' again and change:
-  
-  * #SigLevel    = Required DatabaseOptional
-    SigLevel = TrustAll
-    to
-  * SigLevel    = Required DatabaseOptional
-    #SigLevel = TrustAll
+* **IF** the above command executed properly, do this step. *If you saw errors and nothing was installed, pause this guide now to try and figure out what happened until the step above executes properly*. 
+   * Remove the 'TrustAll' so that pacman requires trust again ... `sudo nano /etc/pacman.conf` again:
+      * Currently:
+         ```
+         #SigLevel    = Required DatabaseOptional
+         SigLevel = TrustAll
+         ```
+      * *Change that to this:*
+         ```
+         SigLevel    = Required DatabaseOptional
+         #SigLevel = TrustAll
+         ```
+      * Save the file
 
 ## 2. Download, make and install 'keyd'
 
