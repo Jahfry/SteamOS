@@ -71,11 +71,13 @@ sudo pacman-key --populate archlinux
 
 These instructions are taken from [the keyd github README](https://github.com/rvaiya/keyd?tab=readme-ov-file#installation). I'm repeating them here with some tweaks (but go read that link to learn about keyd). 
 
-* First, decide where you want to store the source code. I made a directory named '~home/Documents/source'. If you want the same, do the following. Otherwise adapt this command to your directory:
+* First, decide where you want to store the source code. I made a directory named '~home/Documents/source'.
+
+  If you want the same directory, do the following. Otherwise adapt the command to your chosen directory:
   
   `mkdir ~home/Documents/source; cd ~home/Documents/source`
 
-* Now you should be able to clone, build and install 'keyd':
+* Now clone, build and install 'keyd':
 
 ```
 git clone https://github.com/rvaiya/keyd
@@ -94,7 +96,9 @@ sudo systemctl enable keyd && sudo systemctl start keyd
 
 Much of the following is also taken directly from [GitHub - rvaiya/keyd: A key remapping daemon for linux.](https://github.com/rvaiya/keyd?tab=readme-ov-file#installation)
 
-* Create the file '/etc/keyd/default.conf' via `sudo nano /etc/keyd/default.conf` (or use a different editor, but do it with sudo permissions) with the following contents:
+* Create the file '/etc/keyd/default.conf'
+
+  `sudo nano /etc/keyd/default.conf` and paste in this:
   
   ```
   [ids]
@@ -109,26 +113,34 @@ Much of the following is also taken directly from [GitHub - rvaiya/keyd: A key r
   # Remaps the escape key to capslock
   esc = capslock
   ```
-  
-  * This will remap your 'escape' key to be 'capslock'. Your capslock key becomes 'escape' when quickly pressed or 'control' if held down. 
-  
-  * This is just meant as an example, you will need to read up on keyd (see link at the top of this section) to know how to make the remappings you want, but I'll give more help next.
 
-* **'keyd' won't do this remapping until you reload it**. If you are ready to swap your escape and capslock keys, do this:
+  * This is the default example from the keyd github. We'll be customizing it later for the Deck. 
+  * This config will remap your 'escape' key to be 'capslock'. Your capslock key becomes 'escape' when quickly pressed or 'control' if held down. 
+* **'keyd' won't do this remapping until you reload it**. If you are ready to swap your escape and capslock keys for testing, do this:
+
   `sudo keyd reload`
 
 * To revert back to your normal keyboard layout:
+  
   `sudo nano /etc/keyd/default.conf`
-  and comment out the "capslock" and "esc" lines (add a # at the beginning of those lines), save the file, and then:
+  
+  then comment out the "capslock" and "esc" lines (add a # at the beginning of those lines), save the file, and then:
+  
   `sudo keyd reload`
 
 * Your keyboard should be back to normal operation but you have a skeleton file ready for remapping. 
+* **If you ever create a bad mapping that prevents you from using your keyboard,** hold:
 
-* **If you ever create a bad mapping that prevents you from using your keyboard,** hold *'backspace' + 'enter' + 'escape'* down at the same time to kill the keyd process. Edit your conf file again to fix whatever happened and run keyd again via `sudo systemctl start keyd`.
+  *'backspace' + 'enter' + 'escape'* at the same time to kill the keyd process.
+
+  Edit your conf file again to fix whatever happened and run keyd again:
+
+  `sudo systemctl start keyd`.
 
 * If you aren't sure what the name of the key you need to remap is, you can watch key events via `sudo keyd monitor`. If you want time stamps, use `sudo keyd monitor -t`.
-  
-  * If keyd is running, the output of 'monitor' will show the **remapped** keys. To see the keys without remapping just stop keyd and run `sudo keyd monitor` (to stop keyd, use what we did above ... either `sudo systemctl stop keyd` or hold 'backspace+enter+escape`)
+  * If keyd is running, the output of 'monitor' will show the **remapped** keys. To see the keys without remapping just stop keyd (`sudo systemctl stop keyd` or hold 'backspace+enter+escape`) and run
+    
+    `sudo keyd monitor`
 
 * For more information on using the 'keyd' main program do `keyd --help` or `man keyd` for details.
 
