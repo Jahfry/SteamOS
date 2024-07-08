@@ -186,8 +186,9 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
      * While this command is running, press your "volume up" button.
      * You should see:
        
-     > AT Translated Set 2 keyboard    0001:0001:a38e6885      volumeup down
-     > AT Translated Set 2 keyboard    0001:0001:a38e6885      volumeup up
+        > AT Translated Set 2 keyboard    0001:0001:a38e6885      volumeup down
+     
+        > AT Translated Set 2 keyboard    0001:0001:a38e6885      volumeup up
 
   
   * blacklist the Steam Deck buttons (affects power menu and no desire to affect Steam Controls in either mode)
