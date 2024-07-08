@@ -221,7 +221,7 @@ XXX
 
 XXX
 
-* First: get a list of all plugged in USB device IDs. Since this will be different for other models of keyboards/numpads (ie, you can't just use my config unless you own the same devices) I'll detail that process:
+* Get a list of all plugged in USB device IDs. Since this will be different for other models of keyboards/numpads (ie, you can't just use my config unless you own the same devices) I'll detail that process:
    * `sudo systemctl stop keyd` # so we see the raw device IDs with monitor
    * `sudo keyd monitor` # see what devices are being pressed
    * Press a key on each device we want to configure. Examples below for my 3 devices:
@@ -231,6 +231,17 @@ XXX
          > Gaming Keyboard 0416:c345:475be355      numlock down
       * Roccat Kone Aimo USB Mouse:
          > ROCCAT ROCCAT Kone Aimo 16K Mouse       1e7d:2e2c:f891b7cd      leftmouse down
-
-    
-      * 
+* Create a config file for each device separately.
+   * These configs are stored in '/etc/keyd/`
+      * There is no need to remove '/etc/keyd/default.conf'
+      * if you wanted you could also use that for global key remaps that affect all devices (except the Steam Deck buttons that we blacklisted)
+      * Files in '/etc/keyd' should all be loaded when 'keyd' starts
+   * In the following commands I'm using generic device types for the file names, feel free to edit the names.
+     ```
+     sudo touch /etc/keyd/keyboard.conf
+     sudo touch /etc/keyd/numpad.conf
+     sudo touch /etc/keyd/mouse.conf
+     ```
+     
+      
+   
