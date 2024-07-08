@@ -242,6 +242,21 @@ XXX
      sudo touch /etc/keyd/numpad.conf
      sudo touch /etc/keyd/mouse.conf
      ```
+* Add initial contents for each of the conf files next.
+   * **You need to change your [vendor id]:[product id] here using what you found via `sudo keyd monitor` above. These contents match my devices.
+   * For now the [main] section remains empty, so nothing is remapped in this step
+   * Keyboard:
+
+     `sudo nano /etc/keyd/keyboard.conf`
+
+     * Contents:
+       ```
+       [ids]
+       # THIS Device only: Phantom RGB Keyboard 'SONIX USB DEVICE'             
+       320f:5064
+
+       [main] 
+       ```
      
       
    
