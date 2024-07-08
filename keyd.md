@@ -243,7 +243,7 @@ XXX
      sudo touch /etc/keyd/mouse.conf
      ```
 * Add initial contents for each of the conf files next.
-   * **You need to change your [vendor id]:[product id] here using what you found via `sudo keyd monitor` above. These contents match my devices.
+   * **You need to change your [vendor id]:[product id] here using what you found via `sudo keyd monitor` above.** The examples below match *my* devices.
    * For now the [main] section remains empty, so nothing is remapped in this step
    * Keyboard:
 
@@ -252,11 +252,40 @@ XXX
      * Contents:
        ```
        [ids]
-       # THIS Device only: Phantom RGB Keyboard 'SONIX USB DEVICE'             
+       # THIS Device only:
+       #    * Product: Phantom RGB Keyboard
+       #    * `keyd monitor` name: SONIX USB DEVICE
        320f:5064
 
        [main] 
        ```
-     
+   * Numpad:
+
+     `sudo nano /etc/keyd/numpad.conf`
+
+     * Contents:
+       ```
+       [ids]
+       # THIS Device only:
+       #    * Product: Damoshark USB Numpad
+       #    * `keyd monitor` name: Gaming Keyboard
+       0416:c345
+
+       [main] 
+       ```
+   * Mouse:
+
+     `sudo nano /etc/keyd/mouse.conf`
+
+     * Contents:
+       ```
+       [ids]
+       # THIS Device only:
+       #    * Product: Roccat Kone Aimo mouse
+       #    * `keyd monitor` name: ROCCAT ROCCAT Kone Aimo 16K Mouse
+       1e7d:2e2c
+       
+       [main] 
+       ```
       
    
