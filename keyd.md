@@ -35,7 +35,7 @@ sudo pacman-key --populate archlinux
    * Edit '/etc/pacman.confg'
       * Use whatever editor you like, example: `sudo nano /etc/pacman.conf` (all of my commands will be for nano, swap if you want)
       * Originally:
-> SigLevel    = Required DatabaseOptional```
+> SigLevel    = Required DatabaseOptional
       * *Change that to this:*
 > #SigLevel    = Required DatabaseOptional
 > SigLevel = TrustAll
