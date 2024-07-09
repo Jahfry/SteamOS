@@ -166,7 +166,9 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
 ```
 [ids]
 # This section determines which devices 'keyd' will be able to remap.
-# First line tells 'keyd' to bind to ALL devices except those blacklisted later.
+# First line "*" tells 'keyd' to bind to ALL devices EXCEPT:
+#   * Devices blacklisted via "-" lines in this config file
+#   * Devices specifically bound in separate config files
 *
 # Place devices you DON'T want keyd to remap below.
 #   * format example: -<vendor id>:<product id>
@@ -201,8 +203,16 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
         > keyd virtual keyboard   0fac:0ade:efba1ddf      volumeup up
 
 * At this point you have a config file you can use to remap keys without affecting your Steam Deck volume/power buttons and an example of how to remap Escape and Control.
-* If you only have 1 USB device (or multiple but without the same keys on each) you can just modify the existing 'default.conf'.
-* If you have multiple devices with the same keys and want to map them separately, keep reading the next section.  
+* If you only have 1 USB device (or multiple but without the same keys on each) you can just modify the existing 'default.conf' rather than using the rest of my configs below.
+* *If you have a 'default.conf' (bound to "*" all devices)* **BUT** *also have other configs (like I do below) that bind to individual devices*, ***those individual devices won't be affected by 'default.conf'***
+   * Just be aware of this.
+   * My recommendation is to keep the 'default.conf' for future flexibility, but make very specific mappings go in to separate conf files as shown in the next section.
+   * *Example:*
+      * 'default.conf' binds to * and changes "Escape" to be "CapsLock"
+      * 'keyboard.conf' binds specifically to a keyboard "1001:2002"
+      * *No mappings in 'default.conf' will apply to the keyboard "1001:2002"*, **but** ***WILL*** apply to any other keyboard that is connected (unless it also is bound in a different config file). 
+
+* *If you have multiple devices with the same keys and want to map them separately*, keep reading the next section.  
 * For more information on remapping:
    *  [GitHub - rvaiya/keyd: A key remapping daemon for linux.](https://github.com/rvaiya/keyd?tab=readme-ov-file)
    *  `man keyd`
@@ -257,6 +267,10 @@ XXX
        #    * `keyd monitor` name: SONIX USB DEVICE
        320f:5064
 
+       # NOTES:
+       #    * This will prevent 'default.conf' from applying mappings to this device
+       #    * Don't use "-" at the beginning of this line as "-" _prevents_ binding
+       
        [main] 
        ```
    * Numpad:
@@ -271,6 +285,10 @@ XXX
        #    * `keyd monitor` name: Gaming Keyboard
        0416:c345
 
+       # NOTES:
+       #    * This will prevent 'default.conf' from applying mappings to this device
+       #    * Don't use "-" at the beginning of this line as "-" _prevents_ binding
+
        [main] 
        ```
    * Mouse:
@@ -284,9 +302,15 @@ XXX
        #    * Product: Roccat Kone Aimo mouse
        #    * `keyd monitor` name: ROCCAT ROCCAT Kone Aimo 16K Mouse
        1e7d:2e2c
+
+       # NOTES:
+       #    * This will prevent 'default.conf' from applying mappings to this device
+       #    * Don't use "-" at the beginning of this line as "-" _prevents_ binding
        
        [main] 
        ```
+* As I'm not changing anything on my keyboard or mouse, only the numpad, leave those files as-is and update the numpad file:
+   * `sudo nano /etc/keyd/numpad.conf`
 
 ## 7. Additional Tweaks
 
@@ -299,7 +323,7 @@ Please read the notes before deciding to do these yourself.
 * Moving the config files to the 'deck' user directory
    * I did this to try and retain my config files even if SteamOS resets the '/etc' directory
    * This may not have been necessary and won't affect the stuff before working
-   * **This seems like a VERY BAD IDEA on a computer you want to be secured.** 
+   * **This may seem like a BAD IDEA.** 
       * When 'keyd' runs it is run as ***root***.
          * This tweak moves conf files user accessible directory that should not be affected by SteamOS updates
          * If a user manages to get access to the files, they could force arbitrary commands to run as root since keyd has a 'command' binding option
@@ -309,9 +333,9 @@ Please read the notes before deciding to do these yourself.
       sudo ln -s ~/.config/keyd /etc
       ls -aFl ~/.config/keyd
       ```
-      * **Make sure** '~home/.config/keyd' (the directory) **and** all files in it remain owned by user:group *root:root*.
+         * **Make sure** '~home/.config/keyd' (the directory) **and** all files in it remain owned by user:group *root:root*.
 * There is no need to relocate the 'keyd' binaries, docs, man files as they still exist in '~/Documents/source/keyd' (or wherever you compiled it)
-* Cheatsheet how to reinstall after a SteamOS update (NOT tested yet) if it breaks 'keyd', assuming you did everything the way I did:
+* Cheatsheet to reinstall 'keyd' after a SteamOS update (NOT tested yet) if it breaks, assuming you used the same paths and file names:
    ```
    cd ~/Documents/source/keyd
    sudo steamos-readonly disable
