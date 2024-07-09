@@ -346,6 +346,7 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
   `sudo nano /etc/keyd/numpad.conf`
 
   Contents:
+  
       ```
       [ids]
       # Device:
