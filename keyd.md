@@ -307,12 +307,29 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
 * This is where the configuration gets *very specific* to my needs. You'll probably want to modify things for you but feel free to look at what I do.
 * Specifically I want this to happen when I press **Numpad** (not Keyboard) keys:
 
-   | Numpad Key Pressed  | Key Sent |
-   | ------------------- | -------- |
-   | Escape | \ |
-   | Tab | \ |
-   | Backspace | ] |
-   | Enter | ' |
+   | Numpad Key Pressed  | Key Sent | Notes |
+   | ------------------- | -------- | -------- |
+   | Escape | \ | (top extra row) |
+   | Tab | \ | (top extra row) |
+   | Backspace | ] | (top extra row) |
+   | | |
+   | Numlock | ; | (locked ON, state shouldn't toggle) |
+   | / | / | (*no change*) |
+   | * | * | (*no change*) |
+   | - | - | (*no change*) |
+   | | |
+   | numpad 7/Home | numpad 7 | (**always send as NumLock ON**) |
+   | numpad 8/ArrowUp | numpad 8 | (**always send as NumLock ON**) |
+   | numpad 9/PgUp | numpad 9 | (**always send as NumLock ON**) |
+   | numpad + | numpad + | (*no change*) |
+   | | |
+   | numpad 4/ArrowLeft | numpad 7 | (**always send as NumLock ON**) |
+   | numpad 5 | numpad 5 | (*no change*) |
+   | numpad 6/ArrowRight | numpad 6 | (**always send as NumLock ON**) |
+   | numpad Enter | ' | (Enter by default opens chat, bad) |
+   | | |
+   | numpad 0/Ins | numpad 0 | (**always send as NumLock ON**) |
+   | numpad ./Del | numpad . | (**always send as NumLock ON**) |
 
 ## 7. Additional Tweaks
 
