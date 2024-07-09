@@ -262,7 +262,7 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
      * Contents:
        ```
        [ids]
-       # THIS Device only:
+       # Device:
        #    * Product: Phantom RGB Keyboard
        #    * `keyd monitor` name: SONIX USB DEVICE
        320f:5064
@@ -280,7 +280,7 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
      * Contents:
        ```
        [ids]
-       # THIS Device only:
+       # Device:
        #    * Product: Damoshark USB Numpad
        #    * `keyd monitor` name: Gaming Keyboard
        0416:c345
@@ -298,7 +298,7 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
      * Contents:
        ```
        [ids]
-       # THIS Device only:
+       # Device:
        #    * Product: Roccat Kone Aimo mouse
        #    * `keyd monitor` name: ROCCAT ROCCAT Kone Aimo 16K Mouse
        1e7d:2e2c
@@ -346,7 +346,48 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
   `sudo nano /etc/keyd/numpad.conf`
   
 ```
+[ids]
+# Device:
+#    * Product: Damoshark USB Numpad
+#    * `keyd monitor` name: Gaming Keyboard
+0416:c345
 
+# NOTES:
+#    * This will prevent 'default.conf' from applying mappings to this device
+#    * Don't use "-" at the beginning of this line as "-" _prevents_ binding
+#    * You can have multiple Devices configured in a file, but if there were
+#    * 2 keyboard devices here (like to use the keyboard "Pause" key to switch layers)
+#    * other remappings would apply to BOTH devices. In my WoW case this is bad.
+
+[main]
+
+# numpad "backspace" when MACROPAD is NOT active will activate it and turn on numlock
+# will remain as MACROPAD until backspace is HELD for 2 seconds
+#    * this configuration is specific to a numpad with a backspace key ... modify the procedure
+#      for a traditional numpad. 
+#    * Switching to numlock might work but in WoW I use that key for
+#      long cooldowns and don't want to risk a misfire :)
+backspace = togglem(MACROPAD,numlock)
+
+[MACROPAD]
+
+# numpad "backspace" when MACROPAD IS active will deactivate MACROPAD and numlock
+# when HELD for more than 2 seconds 
+#    * Allows use of the numpad normally except for "backspace" key, which I never use
+#    * see note in [main] on switching the key if using a different
+#      numpad that does not have a "backspace" key.
+backspace = timeout(], 2000, togglem(MACROPAD,numlock))
+
+# other keys to remap for WoW binding
+esc = \
+tab = [
+numlock = ;
+kpenter = '
+
+# The rest of the numpad is not remapped, BUT ... 
+# NOTE: numlock needs to be ON for my WoW bindings to work
+#    * ideally we'd set numlock ON by default at boot but Game mode has a problem there
+#    * follow https://github.com/rvaiya/keyd/issues/790 to see if any responses
 ```
 
 ## 7. Additional Tweaks
