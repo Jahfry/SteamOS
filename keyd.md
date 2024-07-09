@@ -309,9 +309,9 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
        
        [main] 
        ```
-* As I'm not changing anything on my keyboard or mouse, only the numpad, leave those files as-is and update the numpad file:
+* Edit the numpad file:
    * `sudo nano /etc/keyd/numpad.conf`
-* This is where the configuration gets *very specific* to my needs. You'll probably want to modify things for you but feel free to look at what I do.
+* This is where the configuration gets *very specific* to my needs. Just consider this an advanced *example* and modify to suit you.
 * Specifically I want this to happen when I press **Numpad** (not Keyboard) keys:
 
    | Numpad Key Pressed  | Key Sent | Notes |
@@ -389,6 +389,20 @@ kpenter = '
 #    * ideally we'd set numlock ON by default at boot but Game mode has a problem there
 #    * follow https://github.com/rvaiya/keyd/issues/790 to see if any responses
 ```
+* **EXTRA** ... modify "capslock" on the **keyboard** to fire a macro
+   * I'm not going to go too far into explaining why I might do this in WoW, you'll get the idea
+   * You can extend this to press MANY keys in succession
+
+   `sudo nano /etc/keyd/keyboard.conf`
+
+     * Contents:
+       ```
+       ```
+     * **NOTE**: Ideally I would activate/deactivate the macro on keyboard "capslock" with the same "backspace" on the numpad that activates the WoW macros there. But I didn't find a good way to do that without having the NUMPADMACRO remappings also affect the keyboard
+     * This means when I'm playing WoW I press numpad "backspace" and keyboard "pause" once to activate the macros
+     * When I am done with WoW I **hold** numpad "backspace" and keyboard "pause" to deactivate the macros
+     * Don't forget the keyboard "backspace + enter + escape" sequence will terminate 'keyd' even in Game mode if you get into a weird situation
+* That's it (almost)
 
 ## 7. Additional Tweaks
 
