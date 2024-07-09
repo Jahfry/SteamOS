@@ -15,6 +15,12 @@
 
 ***Why is Game Mode important?*** Simply put ... frames per second. For me World of Warcraft gets 50% more FPS in Game Mode than in Desktop Mode. 
 
+---
+
+And for a bit more background ... this isn't my main gaming rig. But I've been spending extended periods away from home helping with family issues in another state. This process helps me mimic my home rig setup (which has a programmable keyboard and access to Windows configuration software). However, it's proving effective enough that figuring out this process helps me with one of the last hurdles I needed to ditch Windows in the near future. 
+
+---
+
 *Alternatives?* 
    * 'kmonad'
       * Can be installed without needing to write to the readonly portion of SteamOS, so it works through updates without needing to be fixed
@@ -484,34 +490,4 @@ Please read the notes before deciding to do these yourself.
 
 
 
-## XX. Reddit Post:
-
-# 'keyd' ... remap those USB device keys, both Desktop and Game mode!
-
-## What? 
-
-Do you have a USB keyboard/numpad/mouse/whatever that you want to remap keys on? 
-
-[This](https://github.com/Jahfry/SteamOS/blob/main/keyd.md) *might* be for you. 
-
-## Caveats
-
-* *This isn't a super quick process* (especially with how much detail I put into explaining it)
-* *This does require making modifications to the SteamOS readonly data* (but it is minor)
-* *This probably won't survive through SteamOS updates* (but should be easy to redo)
-* *There is not a friendly UI to do the key mapping* (I wish there was)
-* *I can't provide significant tech support* (but I'll try)
-
-**But if that all doesn't bother you** ... click the "This" link above (goes to my github, just an easy place to post a long guide).
-
-The github guide has explanations at the top of the info to explain why I chose 'keyd' and what we're doing with it. 
-
-PS. If you find typos or other problems, I would *prefer* you file an issue on the github so I can find it easily. But if you don't have an account on github feel free to comment here. 
-
-
-
-# ISSUES
-
-* WoW not loading in Game mode if connected to dock?
-* Switching numpad to Mac style only works in Desktop mode?
 
