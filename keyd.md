@@ -417,3 +417,10 @@ Do you have a USB keyboard/numpad/mouse/whatever that you want to remap keys on?
 The github guide has explanations at the top of the info to explain why I chose 'keyd' and what we're doing with it. 
 
 PS. If you find typos or other problems, I would *prefer* you file an issue on the github so I can find it easily. But if you don't have an account on github feel free to comment here. 
+
+
+
+# ISSUES
+
+* WoW not loading in Game mode if connected to dock?
+* Switching numpad to Mac style only works in Desktop mode?
