@@ -169,7 +169,7 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
   
     `sudo nano /etc/keyd/default.conf`
   
-  * Change the [ids] section to match this (replace the section between [ids] and [main], don't change [main] yet):
+  * Contents: Change the [ids] section to match this (replace the section between [ids] and [main], don't change [main] yet):
 ```
 [ids]
 # This section determines which devices 'keyd' will be able to remap.
@@ -260,58 +260,58 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
      `sudo nano /etc/keyd/keyboard.conf`
 
      * Contents:
-       ```
-       [ids]
-       # Device:
-       #    * Product: Phantom RGB Keyboard
-       #    * `keyd monitor` name: SONIX USB DEVICE
-       320f:5064
-
-       # NOTES:
-       #    * This will prevent 'default.conf' from applying mappings to this device
-       #    * Don't use "-" at the beginning of this line as "-" _prevents_ binding
-       
-       [main] 
-       ```
+        ```
+        [ids]
+        # Device:
+        #    * Product: Phantom RGB Keyboard
+        #    * `keyd monitor` name: SONIX USB DEVICE
+        320f:5064
+        
+        # NOTES:
+        #    * This will prevent 'default.conf' from applying mappings to this device
+        #    * Don't use "-" at the beginning of this line as "-" _prevents_ binding
+        
+        [main] 
+        ```
    * Numpad:
 
      `sudo nano /etc/keyd/numpad.conf`
 
      * Contents:
-       ```
-[ids]
-# Device:
-#    * Product: Damoshark USB Numpad
-#    * `keyd monitor` name: Gaming Keyboard
-0416:c345
-
-# NOTES:
-#    * This will prevent 'default.conf' from applying mappings to this device
-#    * Don't use "-" at the beginning of this line as "-" _prevents_ binding
-
-[main] 
-       ```
+        ```
+        [ids]
+        # Device:
+        #    * Product: Damoshark USB Numpad
+        #    * `keyd monitor` name: Gaming Keyboard
+        0416:c345
+        
+        # NOTES:
+        #    * This will prevent 'default.conf' from applying mappings to this device
+        #    * Don't use "-" at the beginning of this line as "-" _prevents_ binding
+        
+        [main] 
+        ```
    * Mouse:
 
      `sudo nano /etc/keyd/mouse.conf`
 
      * Contents:
-       ```
-       [ids]
-       # Device:
-       #    * Product: Roccat Kone Aimo mouse
-       #    * `keyd monitor` name: ROCCAT ROCCAT Kone Aimo 16K Mouse
-       1e7d:2e2c
-
-       # NOTES:
-       #    * This will prevent 'default.conf' from applying mappings to this device
-       #    * Don't use "-" at the beginning of this line as "-" _prevents_ binding
-       
-       [main] 
-       ```
-* Edit the numpad file:
-   * `sudo nano /etc/keyd/numpad.conf`
-* This is where the configuration gets *very specific* to my needs. Just consider this an advanced *example* and modify to suit you.
+        ```
+        [ids]
+        # Device:
+        #    * Product: Roccat Kone Aimo mouse
+        #    * `keyd monitor` name: ROCCAT ROCCAT Kone Aimo 16K Mouse
+        1e7d:2e2c
+        
+        # NOTES:
+        #    * This will prevent 'default.conf' from applying mappings to this device
+        #    * Don't use "-" at the beginning of this line as "-" _prevents_ binding
+        
+        [main] 
+        ```
+* This is where the configuration gets *very specific* to my needs.
+   * **You can stop here** to create your own configurations, all the breadcrumbs are in place
+   * Just consider this an advanced *example* and modify to suit you.
 * Specifically I want this to happen when I press **Numpad** (not Keyboard) keys:
 
    | Numpad Key Pressed  | Key Sent | Notes |
@@ -346,7 +346,7 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
   `sudo nano /etc/keyd/numpad.conf`
 
   Contents:
-     ```
+      ```
       [ids]
       # Device:
       #    * Product: Damoshark USB Numpad
@@ -361,7 +361,7 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
       #    * other remappings would apply to BOTH devices. In my WoW case this is bad.
       
       [main]
-
+      
       # numpad "backspace" when MACROPAD is NOT active will activate it and turn on numlock
       # will remain as MACROPAD until backspace is HELD for 2 seconds
       #    * this configuration is specific to a numpad with a backspace key ... modify the procedure
@@ -385,7 +385,7 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
       numlock = ;
       kpenter = '
       
-# The rest of the numpad is not remapped, BUT ... 
+      # The rest of the numpad is not remapped, BUT ... 
       # NOTE: numlock needs to be ON for my WoW bindings to work
       #    * ideally we'd set numlock ON by default at boot but Game mode has a problem there
       #    * follow https://github.com/rvaiya/keyd/issues/790 to see if any responses
@@ -396,13 +396,14 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
 
    `sudo nano /etc/keyd/keyboard.conf`
 
-     * Contents:
-       ```
-       ```
-     * **NOTE**: Ideally I would activate/deactivate the macro on keyboard "capslock" with the same "backspace" on the numpad that activates the WoW macros there. But I didn't find a good way to do that without having the NUMPADMACRO remappings also affect the keyboard
-     * This means when I'm playing WoW I press numpad "backspace" and keyboard "pause" once to activate the macros
-     * When I am done with WoW I **hold** numpad "backspace" and keyboard "pause" to deactivate the macros
-     * Don't forget the keyboard "backspace + enter + escape" sequence will terminate 'keyd' even in Game mode if you get into a weird situation
+      * Contents:
+      ```
+      ```
+     * **NOTE**: Ideally I would activate/deactivate the macro on keyboard "capslock" with the same "backspace" on the numpad that activates the WoW macros there.
+        * I didn't find a good way to do that without having the NUMPADMACRO remappings also affect the keyboard
+        * This choice means when I'm playing WoW I press numpad "backspace" and keyboard "pause" once to activate the macros
+        * When I am done with WoW I **hold** numpad "backspace" and keyboard "pause" to deactivate the macros
+        * Don't forget the keyboard "backspace + enter + escape" sequence will terminate 'keyd' even in Game mode if you get into a weird situation
 * That's it (almost)
 
 ## 7. Additional Tweaks
@@ -443,10 +444,10 @@ Please read the notes before deciding to do these yourself.
 
 ## 8. Future Plans
 
-* I would like to make a configurations that only remaps those keys *while playing WoW*, **however:**
+* I would like to make a configurations that only remaps those keys *while playing WoW* (so I can have other configs for other situations), **however:**
    * [This issue](https://github.com/rvaiya/keyd/issues/525) means that the unpatched 'keyd' can't really do this on the Steam Deck
    * There is a patch that supposedly fixes it [in this issue](https://github.com/rvaiya/keyd/pull/545) that requires additional patching instructions
-   * I'm also unsure if the method would work for Proton games on the Steam Deck (need to test)
+   * I'm also unsure if the application method would work for Proton games on the Steam Deck (need to test)
 
 
 
