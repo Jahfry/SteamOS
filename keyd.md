@@ -395,15 +395,15 @@ Please read the notes before deciding to do these yourself.
 
 Do you have a USB keyboard/numpad/mouse/whatever that you want to remap keys on? 
 
-[This](https://github.com/Jahfry/SteamOS/keyd.md) *might* be for you. 
+[This](https://github.com/Jahfry/SteamOS/blob/main/keyd.md) *might* be for you. 
 
 ## Caveats
 
-* This isn't a super quick process (especially with how much detail I put into explaining it)
-* This does require making modifications to the SteamOS readonly data (but it is minor)
-* This probably won't survive through SteamOS updates (but should be easy to redo)
-* There is not a friendly UI to do the key mapping (I wish there was)
-* I can't provide significant tech support (but I'll try)
+* *This isn't a super quick process* (especially with how much detail I put into explaining it)
+* *This does require making modifications to the SteamOS readonly data* (but it is minor)
+* *This probably won't survive through SteamOS updates* (but should be easy to redo)
+* *There is not a friendly UI to do the key mapping* (I wish there was)
+* *I can't provide significant tech support* (but I'll try)
 
 **But if that all doesn't bother you** ... click the "This" link above (goes to my github, just an easy place to post a long guide).
 
