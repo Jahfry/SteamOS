@@ -310,10 +310,10 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
    | Numpad Key Pressed  | Key Sent | Notes |
    | ------------------- | -------- | -------- |
    | Escape | \ | (top extra row) |
-   | Tab | \ | (top extra row) |
+   | Tab | [ | (top extra row) |
    | Backspace | ] | (top extra row) |
    | | |
-   | Numlock | ; | (locked ON, state shouldn't toggle) |
+   | numLock | ; | (locked ON, state shouldn't toggle) |
    | / | / | (*no change*) |
    | * | * | (*no change*) |
    | - | - | (*no change*) |
@@ -330,6 +330,17 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
    | | |
    | numpad 0/Ins | numpad 0 | (**always send as NumLock ON**) |
    | numpad ./Del | numpad . | (**always send as NumLock ON**) |
+
+* With the above properly mapped I can bind those keys in WoW to work like a macro pad with action bars
+* That does mean when I press these keys ( *\*, *[*, *]*, *;*, *'* ) on the keyboard they will activate WoW actions, but that's not something that bothers me
+* Like I said, this configuration is *very specific to my uses* :)
+* The [main] section in makes things work like mapped above, all put together this is my complete 'numpad.conf':
+
+  `sudo nano /etc/keyd/numpad.conf`
+  
+```
+
+```
 
 ## 7. Additional Tweaks
 
