@@ -384,3 +384,28 @@ Please read the notes before deciding to do these yourself.
    * [This issue](https://github.com/rvaiya/keyd/issues/525) means that the unpatched 'keyd' can't really do this on the Steam Deck
    * There is a patch that supposedly fixes it [in this issue](https://github.com/rvaiya/keyd/pull/545) that requires additional patching instructions
    * I'm also unsure if the method would work for Proton games on the Steam Deck (need to test)
+
+
+
+## XX. Reddit Post:
+
+# 'keyd' ... remap those USB device keys, both Desktop and Game mode!
+
+## What? 
+
+Do you have a USB keyboard/numpad/mouse/whatever that you want to remap keys on? 
+
+[This](https://github.com/Jahfry/SteamOS/keyd.md) *might* be for you. 
+
+## Caveats
+
+* This isn't a quick process
+* This does require making modifications to the SteamOS readonly data (but it is minor)
+* This probably won't survive through SteamOS updates (but should be easy to redo)
+* I can't provide significant tech support
+
+**But if that all doesn't bother you** ... click the "This" link above (goes to my github, just an easy place to post a long guide).
+
+The github guide has explanations at the top of the info to explain why I chose 'keyd' and what we're doing with it. 
+
+PS. If you find typos or other problems, I would *prefer* you file an issue on the github so I can find it easily. But if you don't have an account on github feel free to comment here. 
