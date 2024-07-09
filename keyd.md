@@ -279,17 +279,17 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
 
      * Contents:
        ```
-       [ids]
-       # Device:
-       #    * Product: Damoshark USB Numpad
-       #    * `keyd monitor` name: Gaming Keyboard
-       0416:c345
+[ids]
+# Device:
+#    * Product: Damoshark USB Numpad
+#    * `keyd monitor` name: Gaming Keyboard
+0416:c345
 
-       # NOTES:
-       #    * This will prevent 'default.conf' from applying mappings to this device
-       #    * Don't use "-" at the beginning of this line as "-" _prevents_ binding
+# NOTES:
+#    * This will prevent 'default.conf' from applying mappings to this device
+#    * Don't use "-" at the beginning of this line as "-" _prevents_ binding
 
-       [main] 
+[main] 
        ```
    * Mouse:
 
