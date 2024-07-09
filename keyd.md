@@ -430,6 +430,8 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
       capslock = macro(kp7 kp8 kp9 kp4 kp5 kp6)
       
       ```
+     * At this point (after `sudo keyd reload` of course) I press numpad "backspace" and keyboard "pause" to activate my WoW Macro setup
+     * Holding numpad "backspace" and keyboard "pause" for 2 seconds each returns to normal keyboard configuration
      * **NOTE**: Ideally I would activate/deactivate the macro on keyboard "capslock" with the same "backspace" on the numpad that activates the WoW macros there.
         * I didn't find a good way to do that without having the NUMPADMACRO remappings also affect the keyboard
         * This choice means when I'm playing WoW I press numpad "backspace" and keyboard "pause" once to activate the macros
