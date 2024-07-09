@@ -396,8 +396,7 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
    * You can extend this to press MANY keys in succession
 
    `sudo nano /etc/keyd/keyboard.conf`
-
-      * Contents:
+   * Contents:
       ```
       [ids]
       # Device:
