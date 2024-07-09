@@ -109,7 +109,7 @@ Much of the following is also taken directly from [GitHub - rvaiya/keyd: A key r
 
   `sudo nano /etc/keyd/default.conf`
 
-  and paste in this:
+  and paste in these Contents:
   
   ```
   [ids]
@@ -187,7 +187,7 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
 
    (read the comments in the section above to understand what is going on)
 
-* * stop keyd so you can use 'keyd monitor' to see the base devices instead of the remapped keyd device:
+  * stop keyd so you can use 'keyd monitor' to see the base devices instead of the remapped keyd device:
     
     `sudo systemctl`
   
