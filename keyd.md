@@ -399,6 +399,37 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
 
       * Contents:
       ```
+      [ids]
+      # Device:
+      #    * Product: Phantom RGB Keyboard
+      #    * `keyd monitor` name: SONIX USB DEVICE
+      # NOTE: This will prevent 'default.conf' from applying mappings to this device
+      320f:5064
+      
+      [main]
+      
+      # * keyboard "pause" when WOWMACRO is NOT active will activate it
+      # * will remain as WOWMACRO until pause is HELD for 2 seconds
+      # * does not actually use the numpad, just emulates
+      # * numlock is set ON through when turning on the numpad macro
+      #   (in other conf file) and is a shared state so don't set it here
+      # pause = togglem(WOWMACRO,numlock)
+      #   ... instead do this:
+      pause = toggle(WOWMACRO)
+      
+      [WOWMACRO]
+      
+      # * Pressing pause will work normally
+      # * HOLDing pause for 2 seconds will turn off the capslock macro
+      # * numlock is set ON through when turning on the numpad macro
+      #   (in other conf file) and is a shared state so don't set it here
+      #pause = timeout(pause, 2000, togglem(WOWMACRO,numlock))
+      #   ... instead do this:
+      pause = timeout(pause, 2000, toggle(WOWMACRO))
+      
+      # "capslock" will fire multiple numpad key equivalents
+      capslock = macro(kp7 kp8 kp9 kp4 kp5 kp6)
+      
       ```
      * **NOTE**: Ideally I would activate/deactivate the macro on keyboard "capslock" with the same "backspace" on the numpad that activates the WoW macros there.
         * I didn't find a good way to do that without having the NUMPADMACRO remappings also affect the keyboard
