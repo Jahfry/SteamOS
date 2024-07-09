@@ -1,20 +1,27 @@
 # 'keyd' on the Steam Deck
 
-This is a long guide to help people newer to modifying their Steam Deck. Sorry for the folks that just want the nitty gritty, I'd rather just write 1 guide :) And I want to be able to completely redo my procedure if I need to at some random point in the forgetful future. 
+**NOTE:** This is guide is *long* to help people newer to modifying their Steam Deck. Sorry for the folks that just want the nitty gritty, I'd rather just write 1 guide :) And I want to be able to completely redo my procedure if I need to at some random point in the forgetful future. 
 
-*What are we doing?* Installing 'keyd' on a Steam Deck. 
+***Don't go any farther*** unless you are comfortable with running Linux terminal commands. Running commands like this is gives *you* responsibility for fixing any mistakes. This guide is *meant for people who don't mind tinkering with Linux*.
 
-*Why are we doing that?* So you can remap keys on a physical USB keyboard and have it work *both in Game and Desktop mode*, without affecting the Steam Deck's "volume" and "power" buttons. 
+* *What are we doing?* Installing 'keyd' on a Steam Deck. 
+* *Why are we doing that?* So you can remap keys on a physical USB keyboard and have it work *both in Game and Desktop mode*. 
 
-**The Main Problem?** 'keyd' only comes in source code so you'll need to set up your Steam Deck to compile the program first.
+* **The Main Problem?** 'keyd' only comes in source code so you'll need to set up your Steam Deck to compile the program first.
 
 ***Warning***: Updating SteamOS will overwrite the compiler packages we need to update to do the compiling. I'm not sure if that will affect the 'keyd' binary or not after an update, **but it probably will**. If so you will *need to repeat this process after SteamOS updates*. 
 
 **I'll try to remember to edit this section after the next SteamOS update to answer whether you'll have to do this,** but I think it is a safe assumption. 
 
-***Don't go any farther*** unless you are comfortable with running Linux terminal commands and are willing to take responsibility for any mistakes (at worst you may get to a point where you have to reset your Deck, this won't BREAK it, but mistakes *could* be very inconvenient). Honestly this guide is *meant for people who don't mind tinkering with Linux*. The best thing that could happen would be Valve incorporating 'keyd' into their distribution so that it didn't break on OS updates. If you don't feel like you can keep things straight for each update this process may not be for you. **An aternative is 'kmonad'**, which I've used before, but doesn't (at least not easily) work in Game Mode. 
+***Why is Game Mode important?*** Simply put ... frames per second. For me World of Warcraft gets 50% more FPS in Game Mode than in Desktop Mode. 
 
-*Why is Game Mode important?* Simply put ... frames per second. For me World of Warcraft gets about 50% more FPS in Game Mode than in Desktop Mode. If you've been happy with performance playing a game that wants a keyboard in Desktop Mode, look into 'kmonad' for a solution that works through SteamOS updates. I nuked the install that worked with 'kmonad' and forgot to document it so unfortunately (at least for now) I don't have a guide for that. 
+*Alternatives?* 
+   * 'kmonad'
+      * Can be installed without needing to write to the readonly portion of SteamOS, so it works through updates without needing to be fixed
+      * Only works in Desktop mode (maybe could work in Game mode but not without a lot of finessing)
+      * Is harder to configure, at least for me
+      * Comes in binary form (good) but required a very old version when I had it running a year ago
+      * **NOTE:** I nuked the install that worked with 'kmonad' and forgot to document it so unfortunately (at least for now) I don't have a guide for that
 
 ## 0. Prep work for compiling 'keyd' on the Steam Deck
 
