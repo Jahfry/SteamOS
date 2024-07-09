@@ -421,6 +421,9 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
       # pause = togglem(WOWMACRO,numlock)
       #   ... instead do this:
       pause = toggle(WOWMACRO)
+
+      # OPTIONAL, uncomment if you also hate "capslock" in daily life:
+      #capslock = noop
       
       [WOWMACRO]
       
