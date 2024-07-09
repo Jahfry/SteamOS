@@ -224,13 +224,6 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
    * To make it more useful I need to remap some of the numpad keys (like numpadEnter and numLock) so that I can use them for actions in WoW.
    * My numpad ALSO has a row of keyboard keys (Escape, Tab, Backspace) that I want to remap without affecting the TKL keyboard
    * To accomplish all of this I use multiple conf files, with examples of how to create them below
-
-XXX
-
-* In addition to this I will attempt to make a configuration that only remaps those keys *while playing WoW* (but until I edit this I'm not sure how that will work on the Steam Deck, especially in Game mode).
-
-XXX
-
 * Get a list of all plugged in USB device IDs. Since this will be different for other models of keyboards/numpads (ie, you can't just use my config unless you own the same devices) I'll detail that process:
    * `sudo systemctl stop keyd` # so we see the raw device IDs with monitor
    * `sudo keyd monitor` # see what devices are being pressed
@@ -311,6 +304,15 @@ XXX
        ```
 * As I'm not changing anything on my keyboard or mouse, only the numpad, leave those files as-is and update the numpad file:
    * `sudo nano /etc/keyd/numpad.conf`
+* This is where the configuration gets *very specific* to my needs. You'll probably want to modify things for you but feel free to look at what I do.
+* Specifically I want this to happen when I press **Numpad** (not Keyboard) keys:
+
+| Numpad Key Pressed  | Key Sent |
+| ------------------- | -------- |
+| Escape | \ |
+| Tab | \ |
+| Backspace | ] |
+| Enter | ' |
 
 ## 7. Additional Tweaks
 
@@ -347,3 +349,10 @@ Please read the notes before deciding to do these yourself.
    ```
 
    If one of those steps fails (make commands seem the most likely fail), you may need to start the process from the beginning of the guide. But that should work for most updates. 
+
+## 8. Future Plans
+
+* I would like to make a configurations that only remaps those keys *while playing WoW*, **however:**
+   * [This issue](https://github.com/rvaiya/keyd/issues/525) means that the unpatched 'keyd' can't really do this on the Steam Deck
+   * There is a patch that supposedly fixes it [in this issue](https://github.com/rvaiya/keyd/pull/545) that requires additional patching instructions
+   * I'm also unsure if the method would work for Proton games on the Steam Deck (need to test)
