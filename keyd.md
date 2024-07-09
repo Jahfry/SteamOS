@@ -1,6 +1,6 @@
 # 'keyd' on the Steam Deck
 
-This is a long guide to help people newer to modifying their Steam Deck. Sorry for the folks that just want the nitty gritty, I'd rather just write 1 guide :)
+This is a long guide to help people newer to modifying their Steam Deck. Sorry for the folks that just want the nitty gritty, I'd rather just write 1 guide :) And I want to be able to completely redo my procedure if I need to at some random point in the forgetful future. 
 
 *What are we doing?* Installing 'keyd' on a Steam Deck. 
 
@@ -290,7 +290,11 @@ XXX
 
 ## 7. Additional Tweaks
 
-These are NOT needed to make things work. Please read the notes before deciding to do these yourself. 
+These are NOT needed to make things work. 
+
+However they *may* make it easier to recreate your 'keyd' install if a SteamOS update breaks it. 
+
+Please read the notes before deciding to do these yourself. 
 
 * Moving the config files to the 'deck' user directory
    * I did this to try and retain my config files even if SteamOS resets the /etc directory
@@ -300,9 +304,21 @@ These are NOT needed to make things work. Please read the notes before deciding 
       * This tweak moves files root uses to a user accessible directory
       * However I'm not changing the *ownership* to the user, they remain as root, and still require 'sudo' to edit
       * If a user manages to get access to the files, they could force arbitrary commands to run as root since keyd has a 'command' binding option
-   * `sudo mv /etc/keyd ~home/.config`
-   * `sudo ln -s ~home/.config/keyd /etc`
-  
-       
-      
-   
+      * Safest: don't do this
+      * Safer: make sure '~home/.config/keyd' (the directory) **and** all files in it remain owned by user:group *root:root*.
+   * `sudo mv /etc/keyd ~/.config`
+   * `sudo ln -s ~/.config/keyd /etc`
+   * `ls -aFl ~/.config/keyd`
+* There is no big need to relocate the 'keyd' binaries, docs, man files as they still exist in '~/Documents/source/keyd' (or wherever you compiled it)
+* Sorta. Here's the cheatsheet on what to do if you need to reinstall after a SteamOS update (NOT tested yet), assuming you did everything the way I did:
+   ```
+   cd ~/Documents/source/keyd
+   sudo steamos-readonly disable
+   make install                   # re-run the install to copy the previously compiled files
+   sudo steamos-readonly enable
+   ln -s ~/.config/keyd /etc      # link your customized configs in to /etc
+   sudo systemctl enable keyd
+   sudo systemctl start keyd
+   ```
+
+   If one of those steps fails (make commands seem the most likely fail), you may need to start the process from the beginning of the guide. But that should work for most updates. 
