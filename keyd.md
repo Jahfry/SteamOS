@@ -297,20 +297,21 @@ However they *may* make it easier to recreate your 'keyd' install if a SteamOS u
 Please read the notes before deciding to do these yourself. 
 
 * Moving the config files to the 'deck' user directory
-   * I did this to try and retain my config files even if SteamOS resets the /etc directory
+   * I did this to try and retain my config files even if SteamOS resets the '/etc' directory
    * This may not have been necessary and won't affect the stuff before working
-   * **This can be a VERY BAD IDEA on a computer you want to be secured.**
+   * **This seems like a VERY BAD IDEA on a computer you want to be secured.** 
       * When 'keyd' runs it is run as ***root***.
-      * This tweak moves files root uses to a user accessible directory
-      * However I'm not changing the *ownership* to the user, they remain as root, and still require 'sudo' to edit
-      * If a user manages to get access to the files, they could force arbitrary commands to run as root since keyd has a 'command' binding option
-      * Safest: don't do this
-      * Safer: make sure '~home/.config/keyd' (the directory) **and** all files in it remain owned by user:group *root:root*.
-   * `sudo mv /etc/keyd ~/.config`
-   * `sudo ln -s ~/.config/keyd /etc`
-   * `ls -aFl ~/.config/keyd`
-* There is no big need to relocate the 'keyd' binaries, docs, man files as they still exist in '~/Documents/source/keyd' (or wherever you compiled it)
-* Sorta. Here's the cheatsheet on what to do if you need to reinstall after a SteamOS update (NOT tested yet), assuming you did everything the way I did:
+         * This tweak moves conf files user accessible directory that should not be affected by SteamOS updates
+         * If a user manages to get access to the files, they could force arbitrary commands to run as root since keyd has a 'command' binding option
+      * *However* we're not changing the *ownership* to the user, they remain as root, *and still require 'sudo' to edit*
+      ```
+      sudo mv /etc/keyd ~/.config
+      sudo ln -s ~/.config/keyd /etc
+      ls -aFl ~/.config/keyd
+      ```
+      * **Make sure** '~home/.config/keyd' (the directory) **and** all files in it remain owned by user:group *root:root*.
+* There is no need to relocate the 'keyd' binaries, docs, man files as they still exist in '~/Documents/source/keyd' (or wherever you compiled it)
+* Cheatsheet how to reinstall after a SteamOS update (NOT tested yet) if it breaks 'keyd', assuming you did everything the way I did:
    ```
    cd ~/Documents/source/keyd
    sudo steamos-readonly disable
