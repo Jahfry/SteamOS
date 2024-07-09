@@ -307,12 +307,12 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
 * This is where the configuration gets *very specific* to my needs. You'll probably want to modify things for you but feel free to look at what I do.
 * Specifically I want this to happen when I press **Numpad** (not Keyboard) keys:
 
-| Numpad Key Pressed  | Key Sent |
-| ------------------- | -------- |
-| Escape | \ |
-| Tab | \ |
-| Backspace | ] |
-| Enter | ' |
+   | Numpad Key Pressed  | Key Sent |
+   | ------------------- | -------- |
+   | Escape | \ |
+   | Tab | \ |
+   | Backspace | ] |
+   | Enter | ' |
 
 ## 7. Additional Tweaks
 
