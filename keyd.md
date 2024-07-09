@@ -385,7 +385,7 @@ The volume and power buttons on the Steam Deck are handled through a keyboard de
       numlock = ;
       kpenter = '
       
-      # The rest of the numpad is not remapped, BUT ... 
+# The rest of the numpad is not remapped, BUT ... 
       # NOTE: numlock needs to be ON for my WoW bindings to work
       #    * ideally we'd set numlock ON by default at boot but Game mode has a problem there
       #    * follow https://github.com/rvaiya/keyd/issues/790 to see if any responses
@@ -480,3 +480,4 @@ PS. If you find typos or other problems, I would *prefer* you file an issue on t
 
 * WoW not loading in Game mode if connected to dock?
 * Switching numpad to Mac style only works in Desktop mode?
+
