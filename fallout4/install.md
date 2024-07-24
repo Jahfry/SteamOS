@@ -90,7 +90,7 @@ At this point you should be able to click "Mod Manager Download" on Nexus Mods a
   * Go to the "Files" tab
   * Click "Mod Manager Download" link
   * Select "Slow Download" on the next screen (unless you subscribe to NexusMods) ... if everything worked, MO2 should automatically open and download the mod. 
-  * I'm not currently planning to write a full HOW-TO on using MO2 but there will be some stuff added in later sections for the basics. One thing to know is you can change the theme in MO2 to be a dark mode or many other schemes, some of which may render text better on the Steam Deck.
+  * I'm not currently planning to write a full HOW-TO on using MO2 but there is some more help below. 
 
 ## 6. **Installing Fallout 4 Script Extender (F4SE)**
 
@@ -111,9 +111,9 @@ The video linked earlier has a good section on installing F4SE (even though that
 * Select all files/directories
 * Right-click > Copy
 * Go to this directory:
-  `/home/deck/.steam/steam/steamapps/common/Fallout 4`
-* Paste the files copied above
-* (optional) Go back to Downloads and delete the extracted files and (also optional) the F4SE archive. *You might wait until everything is working to clean these up.*
+  `/home/deck/.steam/steam/steamapps/common/Fallout 4` (this is where you end up if you click the 'Home' location in Dolphin's left side pane)
+* Paste the files copied above (if using Dolphin, when prompted, select 'Apply to All' and 'Write Into')
+* (optional) Go back to 'Downloads' and delete the extracted files and (also optional) the F4SE archive. 
 * "Play" Fallout 4 from Steam
    * MO2 should come up, not Fallout 4
    * In MO2, click the Instance Manager button (far left of the top icon toolbar, red and blue arrows)
