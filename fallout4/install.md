@@ -41,6 +41,7 @@
     `./install.sh`
   * Select 'Fallout 4' and click 'OK' 
   * When install is done, Mod Organizer 2 should open when you "Play" Fallout 4 from Steam
+    * **NOTE:** *and remember this* ... to use the Fallout 4 in-game menus when Playing to save settings (which you'll do a few times in this guide), ***use the buttons on the Steam Deck to navigate*** if your keyboard/mouse aren't working for you. *I'm not going to worry about making the mouse + keyboard work for gaming in Desktop mode as I'm planning on Fallout to be played in Game mode once things are set up.*
     * Go ahead and run MO2 by clicking "Play" (on Fallout 4 in your Steam Library)
     * If you've never used MO2 you can try going through the tutorial, but, it was a bit of a mess for me so I just learned as I went along
     * You can accept most defaults during the setup wizard. 
@@ -173,9 +174,14 @@ Any/all optimizations here are *optional* but ***recommended***.
    * Antialiasing: TAA **or** Off (for better performance)
    * Anisotropic Filtering: 4x Samples (if you're sensitive to texture angles, try 8 or 12, 16 shouldn't be noticable)
    * 'Detail' > Medium (but we're about to change some things)
-   * 'Advanced'
-      * Texture Quality: High
-      * Shadow Quality: Medium
+   * 'Advanced' > Detail (keep any setting NOT listed below at what is set by 'Medium')
+      * Lighting Quality: Medium
+      * Godrays Quality: Off
+      * [ ] Motion Blur (unchecked)
+   * 'Advanced' > View Distance
+      * Object Fade: slider between 50%
+      * Actor Fade: slider 30%
+      * Object Detail Fade: High
 
 You can install the various mod fixes using MO2. 
 
