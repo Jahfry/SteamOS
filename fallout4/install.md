@@ -127,7 +127,7 @@ The video linked earlier has a good section on installing F4SE (even though that
       * MO2 will restart and look like it has never been run before, that's fine, it's because of the new instance. Skip the Tutorial. 
       * 'Import Nexus Categories'
       * Now is the time to make MO2 look more "Steam Deck Friendly". Click the "Tools" icon (screwdriver & wrench) and go to the "Theme" tab. Pick a theme you like. 'Transparent-Style-FO4-Trosski' does a good job rendering text on an external monitor. 
-* Now you can switch between "F4SE" to play Fallout with the F4SE mod, or "Fallout 4" for a stock Fallout. Just select whichever and press "Run" in MO2. 
+* Now you can switch between "F4SE" to play Fallout with the F4SE mod.
 
 However while there is a "Fallout Launcher" option in MO2, it currently doesn't work for you. Fix that next. 
 
@@ -146,13 +146,15 @@ Credit to [How to change Fallout 4 graphics settings on Steam Deck](https://www.
    `SteamDeck=0 %command%`
 * Close the Properties window
 
-At this point if you **do not have MO2 installed** the Fallout Launcher should load when you click "Play". But that's not what you're here for. 
+*At this point if you **did not have MO2 installed** the Fallout Launcher would load when you click "Play". And to change that behavior you could remove `SteamDeck=0 %command%` from Steam to change back to never seeing the Launcher.*
 
-If you **DO** have MO2 installed then change the instance you are running (drop-down list at the top-right of the window) to 'Fallout Launcher' and click 'Run' to run the launcher (it might seem like that should just work, but for now it does still require the extra Properties or 'Fallout Launcher' will just run the game without the launcher). 
+Since you **DO** have MO2 installed: 
 
-Later on *if you are not using MO2*, you can remove the extra Properties (SteamDeck=0 %command%) from the Launch Options so you don't have to mess with the Launcher to play. **But for MO2 users just leave it set and let MO2 handle whatever it wants to use based on the "Run" selection.**
-
-Now you can also select "Fallout Launcher" > Run in MO2 to configure graphics options. 
+* "Play" Fallout 4 to invoke MO2.
+* Change the selection you want to run (drop-down list at the top-right of the window) to 'Fallout Launcher'
+* Click 'Run' and the Fallout 4 Launcher will appear
+* Don't remove `SteamDeck=0 %command%` from Steam if you're going to keep using MO2
+* Now you can configure graphics options in the Launcher 
 
 ## 8. Optimizing Fallout 4 for the Steam Deck
 
