@@ -39,7 +39,7 @@
     `./install.sh`
   * Select 'Fallout 4' and click 'OK' 
   * When install is done, Mod Organizer 2 should open when you "Play" Fallout 4 from Steam
-    * Go ahead and run MO2 by clicking "Play"
+    * Go ahead and run MO2 by clicking "Play" (on Fallout 4 in your Steam Library)
     * If you've never used MO2 you can try going through the tutorial, but, it was a bit of a mess for me so I just learned as I went along
     * You can accept most defaults during the setup wizard. 
       * Choose "Global Instance" when choosing between Global and Portable (Portable probably works, just not how I did things)
@@ -51,6 +51,7 @@
 
 **NOTE:** This may not be necessary in future versions if mo2installer changes how the .desktop file is generated.  The current version of MO2 won't open Nexus '.nxm' links automatically with the Flatpak version of ProtonTricks. But the fix is (relatively) easy. For more background information you can read [this github issue](https://github.com/rockerbacon/modorganizer2-linux-installer/issues/317).
 
+* Close MO2 if it is still open after running it the first time
 * Make a backup of the .desktop file for MO2:
   
   ```
@@ -60,7 +61,7 @@
 * Edit the .desktop file:
   
   ```
-  kate `/home/deck/.local/share/applications/modorganizer2-nxm-handler.desktop
+  kate /home/deck/.local/share/applications/modorganizer2-nxm-handler.desktop
   ```
 
 * Change it to match the following:
