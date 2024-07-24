@@ -37,6 +37,7 @@
   * *Open Terminal Here*
   * Run this command in the terminal:
     `./install.sh`
+  * Select 'Fallout 4' and click 'OK' 
   * When install is done, Mod Organizer 2 should open when you "Play" Fallout 4 from Steam
     * Go ahead and run MO2 by clicking "Play"
     * If you've never used MO2 you can try going through the tutorial, but, it was a bit of a mess for me so I just learned as I went along
