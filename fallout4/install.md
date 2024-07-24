@@ -1,5 +1,7 @@
 # Steam Deck Guide: Fallout 4 > Mod Organizer 2 > F4SE
 
+**NOTE:** I have the version of Fallout 4 on Steam that includes all DLC. I can't promise that other versions will work perfectly with the instructions below and many mods assume you have all DLC. Just FYI in case you have a different version. 
+
 ## 0. **Prepare**
 
 * Update SteamOS (this guide used 3.5.19)
@@ -158,7 +160,22 @@ Since you **DO** have MO2 installed:
 
 ## 8. Optimizing Fallout 4 for the Steam Deck
 
-For now just go through the settings and fixes on [this page](https://overkill.wtf/best-settings-fallout-4-on-steam-deck/)
+I mostly did what is on [this page](https://overkill.wtf/best-settings-fallout-4-on-steam-deck/), but will summarize my steps here:
+
+Any/all optimizations here are *optional* but ***recommended***.
+
+* Steam > Library > Fallout 4 > Properties > DLC
+   * Uncheck 'Fallout 4 - High Resolution Texture Pack'
+      * The higher resolution textures aren't helpful on a screen the size of the Steam Deck
+      * Doing this saves you 58GB (over 1/2 of the install size), which is *yuge* for a portable device
+* "Play" Fallout 4 in Steam to get into MO2
+* Change to the "Fallout Launcher" option and "Run" from MO2
+   * Antialiasing: TAA **or** Off (for better performance)
+   * Anisotropic Filtering: 4x Samples (if you're sensitive to texture angles, try 8 or 12, 16 shouldn't be noticable)
+   * 'Detail' > Medium (but we're about to change some things)
+   * 'Advanced'
+      * Texture Quality: High
+      * Shadow Quality: Medium
 
 You can install the various mod fixes using MO2. 
 
