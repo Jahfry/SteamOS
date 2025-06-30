@@ -469,7 +469,7 @@ Please read the notes before deciding to do these yourself.
       sudo ln -s ~/.config/keyd /etc
       ls -aFl ~/.config/keyd
       ```
-         * **Make sure** '~home/.config/keyd' (the directory) **and** all files in it remain owned by user:group *root:root*.
+     * **Make sure** '~home/.config/keyd' (the directory) **and** all files in it remain owned by user:group *root:root*.
 * There is no need to relocate the 'keyd' binaries, docs, man files as they still exist in '~/Documents/source/keyd' (or wherever you compiled it)
 * (***NOT tested yet***) Cheatsheet to reinstall 'keyd' after if a SteamOS update breaks 'keyd', assuming you used the same paths and file names:
    ```
