@@ -49,7 +49,7 @@ sudo pacman-key --populate archlinux
 ```
 * Tell pacman to trust ALL sources (temporary, we'll switch it back after). 
    * This comes from a hint on [this issue](https://github.com/malordin/steamdeck-samba-server/issues/4) where it appears that SteamOS does not ship with complete packages for headers/glibc/base-devel.
-   * Edit '/etc/pacman.confg'
+   * Edit '/etc/pacman.conf'
       * Use whatever editor you like, example: `sudo nano /etc/pacman.conf` (all of my commands will be for nano, swap if you want)
       * Originally:
         
@@ -90,7 +90,7 @@ These instructions are taken from [the keyd github README](https://github.com/rv
 
   If you want the same directory, do the following. Otherwise adapt the command to your chosen directory:
   
-  `mkdir ~home/Documents/source; cd ~home/Documents/source`
+  `mkdir ~/Documents/source; cd ~/Documents/source`
 
 * Now clone, build and install 'keyd':
 
