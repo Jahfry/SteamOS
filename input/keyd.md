@@ -1,5 +1,11 @@
 # 'keyd' on the Steam Deck
 
+## Changelog:
+
+* 2025-06-30 - Fixed some typos and paths, **verified still working on newer SteamOS**
+* 2024-07-09 - Initial post
+
+
 **NOTE:** This is guide is *long* to help people newer to modifying their Steam Deck. Sorry for the folks that just want the nitty gritty, I'd rather just write 1 guide :) And I want to be able to completely redo my procedure if I need to at some random point in the forgetful future. 
 
 ***Don't go any farther*** unless you are comfortable with running Linux terminal commands. Running commands like this is gives *you* responsibility for fixing any mistakes. This guide is *meant for people who don't mind tinkering with Linux*.
@@ -490,7 +496,6 @@ Please read the notes before deciding to do these yourself.
    * [This issue](https://github.com/rvaiya/keyd/issues/525) means that the unpatched 'keyd' can't really do this on the Steam Deck
    * There is a patch that supposedly fixes it [in this issue](https://github.com/rvaiya/keyd/pull/545) that requires additional patching instructions
    * I'm also unsure if the application method would work for Proton games on the Steam Deck (need to test)
-
 
 
 
