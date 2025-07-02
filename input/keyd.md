@@ -6,7 +6,11 @@
 * 2024-07-09 - Initial post
 
 
-**NOTE:** This is guide is *long* to help people newer to modifying their Steam Deck. Sorry for the folks that just want the nitty gritty, I'd rather just write 1 guide :) And I want to be able to completely redo my procedure if I need to at some random point in the forgetful future. 
+**NOTES:** 
+
+* This is guide is *long* to help people newer to modifying their Steam Deck. Sorry for the folks that just want the nitty gritty, I'd rather just write 1 guide :) And I want to be able to completely redo my procedure if I need to at some random point in the forgetful future. 
+* This WILL break whenever SteamOS decides to update or refresh it's install image. This is the pain of immutable distributions (which have many benefits). Whenever it stops working, you'll need to redo the steps starting with 'sudo steamos-readonly disable' through 'sudo steamos-readonly enable' to get it working again.
+* This guide is **not** going to be fully plug-and-play, you will need some ability to adapt it to your system. 
 
 ***Don't go any farther*** unless you are comfortable with running Linux terminal commands. Running commands like this is gives *you* responsibility for fixing any mistakes. This guide is *meant for people who don't mind tinkering with Linux*.
 
